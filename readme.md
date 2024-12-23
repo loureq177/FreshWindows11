@@ -10,8 +10,10 @@ A PowerShell script to set up a fresh Windows 11 environment with preferred sett
 - Uninstall unwanted pre-installed applications 🗑️
 - Unpin everything from the Taskbar 📌
 - Disable all startup applications 🚫
-- Open File Explorer to 'This PC' 📂
+- Open File Explorer to 'This PC' instead od 'Home' 📂
 - Remove OneDrive from environment variables ❌
+- Update all MS Store apps ✔️
+- Update Windows 🪟
 
 ## Usage 🛠️
 

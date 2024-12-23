@@ -73,6 +73,10 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 winget upgrade --all 
 
 # - Update Windows
+Install-Module -Name PSWindowsUpdate -Force
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+Import-Module PSWindowsUpdate
+Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 Install-WindowsUpdate -AcceptAll -AutoReboot
 
 # TODO in version 2:
