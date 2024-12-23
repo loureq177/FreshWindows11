@@ -69,7 +69,24 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 [System.Environment]::SetEnvironmentVariable('OneDriveCommercial', '', 'User')
 [System.Environment]::SetEnvironmentVariable('OneDriveConsumer', '', 'User')
 
-# install polish keyboard
-# Add Polish keyboard layout
-# Pin apps to Taskbar
-# remove English UK keyboard
+# - Update all MS Store apps
+winget upgrade --all 
+
+# - Update Windows
+Install-WindowsUpdate -AcceptAll -AutoReboot
+
+# TODO in version 2:
+# - Install polish keyboard
+# - Add Polish keyboard layout
+# - Pin apps to Taskbar
+# - Remove english UK keyboard
+# - Oh my Posh! - Finish setting up
+
+
+winget install JanDeDobbeleer.OhMyPosh
+Write-Host "Continuing script..."
+
+# Refresh environment variables so restart is not required
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+oh-my-posh font install FiraCode
+Add-Content -Path $PROFILE -Value 'oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\atomic.omp.json" | Invoke-Expression'
