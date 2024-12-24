@@ -1,4 +1,4 @@
-# FreshStart.ps1 🚀
+# FreshStart 🚀
 
 A PowerShell script to set up a fresh Windows 11 environment with preferred settings and applications.
 
