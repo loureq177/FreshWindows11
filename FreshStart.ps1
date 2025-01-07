@@ -90,6 +90,7 @@ Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 Install-WindowsUpdate -AcceptAll -AutoReboot
 
 # TODO in version 2:
+# - Disk clean-up after all this?
 # - How do I allow running scripts in windows automatically, but before running this script?
 # - Install polish keyboard
 # - Add Polish keyboard layout
