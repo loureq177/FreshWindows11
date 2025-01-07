@@ -1,3 +1,13 @@
+# Install WinGet
+$progressPreference = 'silentlyContinue'
+
+Write-Host "Installing WinGet PowerShell module from PSGallery..."
+Install-PackageProvider -Name NuGet -Force | Out-Null
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
+Write-Host "Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet..."
+Repair-WinGetPackageManager
+Write-Host "Done."
+
 # Set Dark Mode for Windows 11
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme" -Value 0
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value 0
@@ -80,7 +90,10 @@ Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
 Install-WindowsUpdate -AcceptAll -AutoReboot
 
 # TODO in version 2:
+# - How do I allow running scripts in windows automatically, but before running this script?
 # - Install polish keyboard
 # - Add Polish keyboard layout
 # - Pin apps to Taskbar
 # - Remove english UK keyboard
+
+#FIX: Automate NuGet asking for permission
