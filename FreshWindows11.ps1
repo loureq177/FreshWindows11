@@ -11,7 +11,7 @@ Write-Host "Done."
 # Set Dark Mode for Windows 11
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme" -Value 0
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value 0
-
+# test change
 # Set region to Poland
 Set-WinHomeLocation -GeoId 191
 
